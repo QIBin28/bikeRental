@@ -5,7 +5,7 @@ import joblib
 
 dt_model = joblib.load('dt_model.pkl')
 
-st.title(" Bike Rental Count Prediction")
+st.title(" Ruby Bike Rental Prediction")
 
 st.image(
     "https://thumbs.dreamstime.com/z/public-city-bicycle-sharing-business-vector-flat-illustration-man-woman-pay-bike-rent-modern-automated-bike-rental-service-169415132.jpg",
