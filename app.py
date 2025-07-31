@@ -22,7 +22,8 @@ yr = st.selectbox(" Year", [0, 1], format_func=lambda x: "2011" if x == 0 else "
 mnth = st.slider(" Month", 1, 12)
 hr = st.slider(" Hour", 0, 23)
 holiday = st.selectbox("  Holiday", [0, 1], format_func=lambda x: "No" if x == 0 else "Yes")
-weekday = st.slider(" Weekday (0=Sunday)", 0, 6)
+weekday = st.selectbox(" Weekday (1=Monday)", [1, 2, 3, 4, 5, 6, 7], format_func=lambda x: {
+    1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday", 6: "Saturday", 7: "Sunday"}[x])
 workingday = st.selectbox("Working Day", [0, 1], format_func=lambda x: "No" if x == 0 else "Yes")
 weathersit = st.selectbox(" Weather Situation", [1, 2, 3, 4], format_func=lambda x: {
     1: "Clear", 2: "Mist/Cloudy", 3: "Light Snow/Rain", 4: "Heavy Rain/Snow"}[x])
