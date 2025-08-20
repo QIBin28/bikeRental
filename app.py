@@ -5,7 +5,7 @@ import joblib
 
 dt_model = joblib.load('dt_model.pkl')
 
-st.title(" Ruby Bike Rental Prediction")
+st.title(" Bike Rental Count Prediction")
 
 st.image(
     "https://thumbs.dreamstime.com/z/public-city-bicycle-sharing-business-vector-flat-illustration-man-woman-pay-bike-rent-modern-automated-bike-rental-service-169415132.jpg",
@@ -18,7 +18,6 @@ feature_columns = ['season', 'yr', 'mnth', 'hr', 'holiday', 'weekday',
 season = st.selectbox(" Season", [1, 2, 3, 4], format_func=lambda x: {
     1: "Spring", 2: "Summer", 3: "Fall", 4: "Winter"}[x])
 
-yr = st.selectbox(" Year", [0, 1], format_func=lambda x: "2011" if x == 0 else "2012")
 mnth = st.slider(" Month", 1, 12)
 hr = st.slider(" Hour", 0, 23)
 holiday = st.selectbox("  Holiday", [0, 1], format_func=lambda x: "No" if x == 0 else "Yes")
@@ -42,7 +41,6 @@ def new_func(input_df):
 if st.button(" Predict Rentals"):
     input_df = pd.DataFrame({
         'season': [season],
-        'yr': [yr],
         'mnth': [mnth],
         'hr': [hr],
         'holiday': [holiday],
